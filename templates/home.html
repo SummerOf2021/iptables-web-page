@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="./static/home.css">
+
+	<title>Table</title>
+    <script type="text/javascript" src="./static/script.js"></script>
+</head>
+<body onload="updateList()">
+<style>
+		table,
+		tr,
+		th,
+		td {
+			border: 1px solid #000000;
+			border-collapse: collapse;
+			background-color: #fff;
+		}
+
+		table,
+		tr,
+		th,{
+			padding: 5px;
+		}
+
+	</style>
+	<div id="formContent1">
+		<table cellpadding="3">
+			<tr>
+				<td>
+					<div class="center"><b>Chain</b></div>
+				</td>
+
+				<td>
+					<div class="center"><b>ID</b></div>
+				</td>
+				<td>
+					<div class="center"><b>Target</b></div>
+				</td>
+				<td>
+					<div class="center"><b>Protocol</b></div>
+				</td>
+				<td>
+					<div class="center"><b>In</b></div>
+				</td>
+				<td>
+					<div class="center"><b>Out</b></div>
+				</td>
+				<td>
+					<div class="center"><b>Source</b></div>
+				</td>
+				<td>
+					<div class="center"><b>Destination</b></div>
+				</td>
+				<td>
+					<div class="center"><b>Src Port</b></div>
+				</td>
+				<td>
+					<div class="center"><b>Dest Port</b></div>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					<div class="center">
+						<select id="chain">
+							<option value="INPUT">Input</option>
+							<option value="OUTPUT">Output</option>
+							<option value="FORWARD">Forward</option>
+						</select>
+					</div>
+				</td>
+				<td>
+					<div class="center"><input id="id" type="text" size="1"></div>
+				</td>
+				<td>
+					<div class="center">
+						<select id="target">
+							<option value="ACCEPT">Accept</option>
+							<option value="REJECT">Reject</option>
+							<option value="DROP">Drop</option>
+						</select>
+					</div>
+				</td>
+				<td>
+					<div class="center"><input id="prot" type="text" size="4" placeholder=""></div>
+				</td>
+				<td>
+					<div class="center"><input id="in" type="text" size="4" placeholder=""></div>
+				</td>
+				<td>
+					<div class="center"><input id="out" type="text" size="4"></div>
+				</td>
+				<td>
+					<div class="center"><input id="source" type="text" size="10"></div>
+				</td>
+				<td>
+					<div class="center"><input id="destination" type="text" size="10"></div>
+				</td>
+				<td>
+					<div class="center"><input id="sport" type="text" size="4"></div>
+				</td>
+				<td>
+					<div class="center"><input id="dport" type="text" size="4"></div>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="10">
+					<div class="center"><input type="button" id="add" value="Add" onclick="Javascript:addRule()"></div>
+				</td>
+			</tr>
+		</table>
+
+	</div>
+	&nbsp;
+	&nbsp;
+	&nbsp;
+	<div id="formContent">
+		<table id="list" cellpadding="3" class="update">
+			<tr>
+				<th>
+					<div class="add"><b>Chain</b></div>
+				</th>
+				<th>
+					<div class="add"><b>ID</b></div>
+				</th>
+				<th>
+					<div class="add"><b>Pkts</b></div>
+				</th>
+				<th>
+					<div class="add"><b>Bytes</b></div>
+				</th>
+				<th>
+					<div class="add"><b>Target</b></div>
+				</th>
+				<th>
+					<div class="add"><b>Protocol</b></div>
+				</th>
+				<th>
+					<div class="add"><b>OPT</b></div>
+				</th>
+				<th>
+					<div class="add"><b>In</b></div>
+				</th>
+				<th>
+					<div class="add"><b>Out</b></div>
+				</th>
+				<th>
+					<div class="add"><b>Source</b></div>
+				</th>
+				<th>
+					<div class="add"><b>Destination</b></div>
+				</th>
+				<th>
+					<div class="add"><b>Src Port</b></div>
+				</th>
+				<th>
+					<div class="add"><b>Dest Port</b></div>
+				</th>
+				<th>
+					<div class="add"><b>Delete</b></div>
+				</th>
+			</tr>
+		</table>
+	</div>
+
+
+
+<h3>Save a backup</h3>
+<div id="formfooter">
+<a href="https://localhost:5000/v1/api/save">Download</a>
+</div>
+
+
+<h3>Upload the backup to restore the iptabels</h3>
+<div id="formfooter1">
+<form action = "https://localhost:5000/v1/api/restore" method = "POST"
+         enctype = "multipart/form-data">
+         <input type = "file" name = "file" />
+         <input type = "submit"  value="Submit file"/>
+      </form>
+</div>
+<br>
+<br>
+<div id="formfooter">
+ <a href="/logout">Logout</a>
+</div>
+
+</body>
+</html>
