@@ -79,10 +79,10 @@ then
 # Web pages:
 
 ### Login page 
+![121815943-82120a80-cc81-11eb-9bba-281c107ed3d0](https://user-images.githubusercontent.com/77105379/122270487-0c0edd00-cee7-11eb-9580-b030cf47da05.png)
 
-![Screenshot from 2021-06-10 12-26-11](/home/user/Pictures/Screenshot from 2021-06-10 12-26-11.png)
 
 ### Home page
 
-![Screenshot from 2021-06-10 12-26-](/home/user/Pictures/Screenshot from 2021-06-10 12-26-.png)
+![121815938-77f00c00-cc81-11eb-9bfd-ee47160a4009](https://user-images.githubusercontent.com/77105379/122270505-103afa80-cee7-11eb-8c12-82812a24a263.png)
 
